@@ -1,12 +1,13 @@
 # 🚁 无人机智维助手 (Drone AI Assistant)
 
-> **不只是套壳对话，而是垂直领域的 AI 落地实践。** 本项目是一个专为无人机维保场景打造的企业级 Web AI 系统。通过全链路架构，实现了从**海量二进制飞控日志上传 -> Node.js 核心数据提取 -> 动态 Prompt 组装 -> AI 专家分析 -> 前端 SSE 实时流式渲染**的完整闭环。
+> **深度集成无人机垂直领域工作流，通信工程领域的 AI 落地实践。
+> **本项目是一个专为无人机智慧维护场景打造的 Web AI 系统。通过全链路架构，实现了从**海量二进制飞控日志上传 -> Node.js 核心数据及异常特征降维提取 -> 动态 Prompt 组装 -> AI 专家分析 -> 前端 SSE 实时流式渲染**的完整闭环。
 
----
+------
 
-## ✨ 核心亮点 (Core Highlights)
+## ✨ 核心亮点 
 
-本项目拒绝简单的 API 拼接，深入解决了复杂 AI 前端交互中的多项工程化痛点（**强烈建议在面试中探讨以下技术点**）：
+本项目拒绝简单的 API 拼接，深入解决了复杂 AI 前端交互中的多项工程化痛点：
 
 - ⚡ **海量对话长列表优化**：采用 `react-window` 实现虚拟列表 (Virtual List)，使包含上千条记录的历史会话侧边栏维持**毫秒级切换**，真实 DOM 节点始终控制在个位数，彻底杜绝页面卡顿。
 - 🔄 **Context 性能极致压榨**：面对流式输出时高频触发的全局状态更新，采用 **Context 读写分离架构 (Read/Write Split)** 结合 `useMemo/useCallback`，消除组件雪崩式无效重渲染。
@@ -14,7 +15,7 @@
 - 📦 **企业级构建分包策略**：深入配置 Vite 的 `manualChunks` 策略，剥离 React 核心、Ant Design 等大体积第三方依赖，配合 `rollup-plugin-visualizer` 进行产物分析，实现生产环境代码极致压缩与首屏秒开。
 - 🛡️ **高可用中间层设计**：Node.js 后端不仅负责文件 `multer` 接收与降维解析，还实现了**指数退避 (Exponential Backoff) + Jitter 随机抖动**算法的防弱网重试机制，有效保护第三方 AI 接口配额。
 
-## 🏗️ 系统架构 (Architecture Flow)
+## 🏗️ 系统架构
 
 ```
 graph LR
@@ -26,9 +27,9 @@ graph LR
     A -- 6. 虚拟列表 & 打字机渲染 --> A
 ```
 
-## 🛠️ 技术栈 (Tech Stack)
+## 🛠️ 技术栈
 
-### 前端 (Frontend)
+### 前端 
 
 - **核心骨架**: React 18 + TypeScript + Vite
 - **UI 规范**: Ant Design 5.x
@@ -36,14 +37,14 @@ graph LR
 - **性能优化**: `react-window` (虚拟列表), 路由懒加载, 自定义 Rollup 分包
 - **通信协议**: Fetch API + Server-Sent Events (SSE) + AbortController
 
-### 后端 (Backend / Node Middleware)
+### 后端 
 
 - **核心引擎**: Node.js + Express
 - **文件处理**: `multer` (处理 multipart/form-data)
 - **网络容错**: 自定义指数退避重试算法
 - **跨域策略**: CORS 中间件配置
 
-## 🚀 快速启动 (Getting Started)
+## 🚀 快速启动
 
 ### 1. 克隆项目
 
@@ -86,15 +87,16 @@ npm run preview
 ## 🧪 核心使用场景展示
 
 1. **日常排障问答**：在底部的输入框内输入故障现象（如：“电机起飞时发出异响，且伴随 GPS 丢失”），体验极速的流式打字机回复。
-2. **日志深度解析**：点击输入框左侧的 📎 按钮，上传一份假定的 `.ulog` 文件，等待系统自动提取数据并输出极具专业性的排障指引。
+2. **日志深度解析**：点击输入框左侧的 📎 按钮，上传一份无人机飞控日志 `.ulog` 文件，等待系统自动提取数据并输出极具专业性的排障指引。
 3. **会话管理**：随意新建、切换、删除侧边栏的历史记录，体验在极端复杂状态下的丝滑 UI。
 
-## 🔮 未来演进 (Roadmap)
+## 🔮 未来演进 
 
 - [ ] 接入 Python `pyulog` 脚本，实现真正意义上的硬件二进制日志实时硬解码。
 - [ ] 引入 RAG（检索增强生成），将大疆 / 极飞等官方维修手册向量化，提升专业度。
 - [ ] 前端支持飞控日志数据的 ECharts 时序折线图可视化渲染。
 
----
+------
 
-_If you find this project helpful, please give it a ⭐️!_
+*If you find this project helpful, please give it a ⭐️!*
+觉得有用欢迎 Star 支持✨
