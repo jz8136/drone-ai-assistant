@@ -2,7 +2,7 @@
 
 > **不只是套壳对话，而是垂直领域的 AI 落地实践。** 本项目是一个专为无人机维保场景打造的企业级 Web AI 系统。通过全链路架构，实现了从**海量二进制飞控日志上传 -> Node.js 核心数据提取 -> 动态 Prompt 组装 -> AI 专家分析 -> 前端 SSE 实时流式渲染**的完整闭环。
 
-------
+---
 
 ## ✨ 核心亮点 (Core Highlights)
 
@@ -48,7 +48,7 @@ graph LR
 ### 1. 克隆项目
 
 ```
-git clone https://github.com/yourusername/drone-ai-assistant.git
+git clone https://github.com/jz8136/drone-ai-assistant.git
 ```
 
 ### 2. 后端服务启动
@@ -95,6 +95,6 @@ npm run preview
 - [ ] 引入 RAG（检索增强生成），将大疆 / 极飞等官方维修手册向量化，提升专业度。
 - [ ] 前端支持飞控日志数据的 ECharts 时序折线图可视化渲染。
 
-------
+---
 
-*If you find this project helpful, please give it a ⭐️!*
+_If you find this project helpful, please give it a ⭐️!_

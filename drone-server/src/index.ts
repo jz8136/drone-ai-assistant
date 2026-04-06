@@ -5,7 +5,11 @@ import { chatStreamHandler } from "./controllers/chat.js";
 import multer from "multer";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url"; //引入 url 模块
 
+// 2. 模拟 __dirname 的行为
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 dotenv.config(); //加载环境变量
 const app = express(); //创建一个 Web 服务器实例（应用对象）
 app.use(
