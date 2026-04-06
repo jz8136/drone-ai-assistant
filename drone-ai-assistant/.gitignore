@@ -1,0 +1,23 @@
+# 依赖目录
+node_modules/
+
+# 生产环境打包产物
+dist/
+dist-ssr/
+*.local
+
+# 各种编辑器配置
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 性能分析报告（我们之前生成的那个图）
+stats.html
+
+# 操作系统文件
+.DS_Store
