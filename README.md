@@ -56,12 +56,10 @@ git clone https://github.com/jz8136/drone-ai-assistant.git
 
 进入后端目录，配置大模型 API Key 后启动 Node.js 中间层：
 
-Bash
-
 ```
 cd drone-server
 npm install
-# 在根目录新建 .env 文件，写入你的大模型 API_KEY (如: LLM_API_KEY=sk-xxxx)
+# 在根目录新建 .env 文件，写入大模型 API_KEY (如: LLM_API_KEY=sk-xxxx)
 npm run dev
 # 服务将运行在 http://localhost:3000
 ```
